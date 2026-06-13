@@ -1,6 +1,6 @@
 import { site } from '../data/site'
 
-export function Contact() {
+export function ContactPage() {
   return (
     <section className="section" id="contact">
       <div className="container">

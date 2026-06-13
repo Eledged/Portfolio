@@ -1,9 +1,10 @@
 import { useState } from 'react'
+import { Link } from 'react-router'
 
 const navLinks = [
-  { href: '#about', label: 'About' },
-  { href: '#projects', label: 'Projects' },
-  { href: '#contact', label: 'Contact' },
+  { to: '/about', label: 'About' },
+  { to: '/projects', label: 'Projects' },
+  { to: '/contact', label: 'Contact' },
 ]
 
 export function Header() {
@@ -12,9 +13,9 @@ export function Header() {
   return (
     <header className="header">
       <div className="container header__inner">
-        <a href="#" className="header__logo">
+        <Link to="/" className="header__logo">
           Portfolio
-        </a>
+        </Link>
 
         <button
           type="button"
@@ -35,13 +36,13 @@ export function Header() {
         >
           <ul>
             {navLinks.map((link) => (
-              <li key={link.href}>
-                <a
-                  href={link.href}
+              <li key={link.to}>
+                <Link
+                  to={link.to}
                   onClick={() => setMenuOpen(false)}
                 >
                   {link.label}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>

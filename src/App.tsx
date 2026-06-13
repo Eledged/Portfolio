@@ -1,21 +1,51 @@
-import { About } from './components/About'
-import { Contact } from './components/Contact'
+import { createBrowserRouter, RouterProvider, Outlet } from 'react-router'
 import { Footer } from './components/Footer'
 import { Header } from './components/Header'
-import { Hero } from './components/Hero'
-import { Projects } from './components/Projects'
+import { HomePage } from './pages/HomePage'
+import { AboutPage } from './pages/AboutPage'
+import { ProjectsPage } from './pages/ProjectsPage'
+import { ContactPage } from './pages/ContactPage'
 
-export function App() {
+function RootLayout() {
   return (
     <>
       <Header />
       <main>
-        <Hero />
-        <About />
-        <Projects />
-        <Contact />
+        <Outlet />
       </main>
       <Footer />
     </>
   )
+}
+
+const routes = [
+  {
+    element: <RootLayout />,
+    children: [
+      {
+        path: '/',
+        element: <HomePage />,
+      },
+      {
+        path: '/about',
+        element: <AboutPage />,
+      },
+      {
+        path: '/projects',
+        element: <ProjectsPage />,
+      },
+      {
+        path: '/contact',
+        element: <ContactPage />,
+      },
+    ],
+  },
+]
+
+const router = createBrowserRouter(routes, {
+  basename: '/portfolio/',
+})
+
+export function App() {
+  return <RouterProvider router={router} />
 }

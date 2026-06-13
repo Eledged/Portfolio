@@ -1,6 +1,6 @@
 import { site } from '../data/site'
 
-export function About() {
+export function AboutPage() {
   return (
     <section className="section" id="about">
       <div className="container">

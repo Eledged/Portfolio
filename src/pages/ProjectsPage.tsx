@@ -1,7 +1,7 @@
 import { projects } from '../data/projects'
-import { ProjectCard } from './ProjectCard'
+import { ProjectCard } from '../components/ProjectCard'
 
-export function Projects() {
+export function ProjectsPage() {
   return (
     <section className="section section--alt" id="projects">
       <div className="container">

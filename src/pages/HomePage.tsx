@@ -1,6 +1,7 @@
+import { Link } from 'react-router'
 import { site } from '../data/site'
 
-export function Hero() {
+export function HomePage() {
   return (
     <section className="hero" id="home">
       <div className="container hero__inner">
@@ -9,12 +10,12 @@ export function Hero() {
         <p className="hero__subtitle">{site.title}</p>
         <p className="hero__tagline">{site.tagline}</p>
         <div className="hero__actions">
-          <a href="#projects" className="btn btn--primary">
+          <Link to="/projects" className="btn btn--primary">
             View Projects
-          </a>
-          <a href="#contact" className="btn btn--secondary">
+          </Link>
+          <Link to="/contact" className="btn btn--secondary">
             Get in Touch
-          </a>
+          </Link>
         </div>
       </div>
     </section>
